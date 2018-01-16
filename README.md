@@ -2,4 +2,25 @@
 
 A collection of javascript form validators
 
-This is an unfinished package, watch this space.
+## isEmail
+
+```js
+import { isEmail } from "form-validators";
+
+// Create the email validator
+const emailValidator = isEmail();
+emailValidator("email@domain.com"); // undefined
+emailValidator("not an email address"); // 'not an email address' is not a valid email address.
+
+// Define a custom error message
+const customEmailValidator = isEmail("You dun goofed!");
+emailValidator("email@domain.com"); // undefined
+emailValidator("not an email address"); // You dun goofed!
+
+// Optionaly pass a function that recieves the email adress to build a custom error message
+const dynamicCustomEmailValidator = isEmail(
+  ({ email }) => `Hmm... I don't think '${email}' is valid.`
+);
+emailValidator("email@domain.com"); // undefined
+emailValidator("not an email address"); // Hmm... I don't think 'not an email address' is valid.
+```
