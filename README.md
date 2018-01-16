@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/luk707/form-validators.svg?style=svg)](https://circleci.com/gh/luk707/form-validators)
+
 # form-validators
 
 A collection of javascript form validators
