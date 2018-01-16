@@ -1,0 +1,19 @@
+{
+  "name": "form-validators",
+  "version": "0.0.0",
+  "description": "A collection of javascript form validators Edit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luk707/form-validators.git"
+  },
+  "author": "Luke Harris <lukeharris01170@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luk707/form-validators/issues"
+  },
+  "homepage": "https://github.com/luk707/form-validators#readme"
+}
