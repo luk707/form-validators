@@ -1,4 +1,18 @@
-version: 2
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - test
+      - build:
+          # Only run a deploy if tests pass and a new version tag has been commited on master
+          requires:
+            - test
+          filters:
+            tags:
+              only: /v[0-9]+(\.[0-9]+)*/
+            branches:
+              only:
+                - master
 jobs:
   test:
     docker:
@@ -20,15 +34,6 @@ jobs:
       # Run tests!
       - run: npm test -- --tap
   deploy:
-    # Only run a deploy if tests pass and a new version tag has been commited on master
-    requires:
-      - test
-    filters:
-      tags:
-        only: /v[0-9]+(\.[0-9]+)*/
-      branches:
-        only:
-          - master
     docker:
       - image: circleci/node:7.10
     steps:
