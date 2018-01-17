@@ -4,15 +4,14 @@ workflows:
     jobs:
       - test
       - deploy:
-          # Only run a deploy if tests pass and a new version tag has been commited on master
+          # Only run a deploy if tests pass and a new version tag has been pushed
           requires:
             - test
           filters:
             tags:
               only: /v[0-9]+(\.[0-9]+)*/
             branches:
-              only:
-                - master
+              ignore: /.*/
 jobs:
   test:
     docker:
