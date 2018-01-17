@@ -1,9 +1,5 @@
 import { Validator, Validation, Value, Values } from "./validation";
 
-export const runValidator = (
-  validator: Validator,
-  value: Value,
-  values?: Values
-): Validation => validator(value, values);
-
-export const valid = undefined;
+export const isValid = (validation: Validation) => validation === undefined;
+export const isInvalid = (validation: Validation) =>
+  typeof validation === "string";

@@ -4,9 +4,20 @@
   "description": "A collection of javascript form validators Edit",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/src/__tests__/.*\\.(ts|tsx|js)$"
+  },
   "scripts": {
     "build": "rm -rf lib && tsc",
-    "test": "ava-ts"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,8 +30,9 @@
   },
   "homepage": "https://github.com/luk707/form-validators#readme",
   "devDependencies": {
-    "ava": "^0.24.0",
-    "ava-ts": "^0.24.0",
+    "@types/jest": "^22.0.1",
+    "jest": "^22.1.2",
+    "ts-jest": "^22.0.1",
     "ts-node": "^4.1.0",
     "typescript": "^2.6.2"
   }

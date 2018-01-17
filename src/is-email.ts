@@ -2,8 +2,8 @@ import {
   getErrorMessage,
   ErrorMessage,
   ErrorMessageGenerator
-} from "../error-message";
-import { Validator, Validation, Value, Values } from "../validation";
+} from "./error-message";
+import { Validator, Validation, Value, Values } from "./validation";
 
 export interface EmailErrorMessageOptions {
   email: Value;
@@ -18,8 +18,6 @@ export const isEmail = (
     EmailErrorMessageOptions
   > = defaultIsEmailErrorMessageGenerator
 ): Validator => (value: Value): Validation =>
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    value
-  )
+  /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value)
     ? undefined
     : getErrorMessage<EmailErrorMessageOptions>(errorMessage, { email: value });
