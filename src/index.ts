@@ -1,3 +1,3 @@
-import { isEmail } from "./validators/is-email";
+import { isEmail } from "./is-email";
 
 export { isEmail };
