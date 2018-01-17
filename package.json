@@ -15,7 +15,7 @@
     "build": "rm -rf lib && tsc",
     "test": "jest",
     "prepublish": "npm run build",
-    "docs": "typedoc --out docs/ ./src"
+    "docs": "typedoc --out docs/ ./src && gh-pages -d docs"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
   "homepage": "https://github.com/luk707/form-validators#readme",
   "devDependencies": {
     "@types/jest": "^22.0.1",
+    "gh-pages": "^1.1.0",
     "jest": "^22.1.2",
     "ts-jest": "^22.0.1",
     "ts-node": "^4.1.0",
