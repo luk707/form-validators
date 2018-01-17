@@ -4,9 +4,7 @@ workflows:
     jobs:
       - test
       - deploy:
-          # Only run a deploy if tests pass and a new version tag has been pushed
-          requires:
-            - test
+          # Only run a deploy if a new version tag has been pushed
           filters:
             tags:
               only: /v[0-9]+(\.[0-9]+)*/
@@ -52,5 +50,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       # Reads the npm publish key from the environment and confirgures the .npmrc file
+      - run: npm test -- --tap
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_KEY" >> ~/.npmrc
       - run: npm publish
