@@ -5,11 +5,7 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
@@ -17,7 +13,9 @@
   },
   "scripts": {
     "build": "rm -rf lib && tsc",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "npm run build",
+    "docs": "typedoc --out docs/ ./src"
   },
   "repository": {
     "type": "git",
