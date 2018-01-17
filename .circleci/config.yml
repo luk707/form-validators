@@ -2,7 +2,11 @@ workflows:
   version: 2
   commit:
     jobs:
-      - test
+      - test:
+        filters:
+          branches:
+            only:
+              - master
   deploy:
     jobs:
       - deploy:
