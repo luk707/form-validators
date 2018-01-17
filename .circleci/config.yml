@@ -1,53 +1,37 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
-
-# add the npm token to the npmrc file
-dependencies:
-  pre:
-    - echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_KEY" >> ~/.npmrc
-
 jobs:
-  # deploy the project on new version tags
-  deployment:
-    npm:
-      tag: /v[0-9]+(\.[0-9]+)*/
-          commands:
-        - npm publish
-
-  # build the project and run tests
-  build:
+  - test:
     docker:
-      # specify the version you desire here
       - image: circleci/node:7.10
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
     working_directory: ~/repo
-
     steps:
-      - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
+      # Install dependecies
       - run: npm install
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # run tests!
+      # Run tests!
       - run: npm test -- --tap
-
-
+  - deploy:
+    # Only run a deploy if tests pass and a new version tag has been commited on master
+    requires:
+      - test
+    filters:
+      tags:
+        only: /v[0-9]+(\.[0-9]+)*/
+      branches:
+        only:
+          - master
+    docker:
+      - image: circleci/node:7.10
+    steps:
+      # Reads the npm publish key from the environment and confirgures the .npmrc file
+      - consume_npm_token: echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_KEY" >> ~/.npmrc
+      - publish: npm publish
