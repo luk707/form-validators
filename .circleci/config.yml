@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  - test:
+  test:
     docker:
       - image: circleci/node:7.10
     working_directory: ~/repo
@@ -19,7 +19,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       # Run tests!
       - run: npm test -- --tap
-  - deploy:
+  deploy:
     # Only run a deploy if tests pass and a new version tag has been commited on master
     requires:
       - test
