@@ -36,7 +36,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       # Run tests!
-      - run: npm test -- --tap
+      - run: npm test
   deploy:
     docker:
       - image: circleci/node:7.10
@@ -56,6 +56,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       # Reads the npm publish key from the environment and confirgures the .npmrc file
-      - run: npm test -- --tap
+      - run: npm test
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_KEY" >> ~/.npmrc
       - run: npm publish
