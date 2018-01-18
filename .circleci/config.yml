@@ -61,4 +61,6 @@ jobs:
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_KEY" >> ~/.npmrc
       - run: npm publish
       # Since we have published a new version of the package, bump the docs too
+      - run: git config --global user.email "$GH_EMAIL"
+      - run: git config --global user.name "$GH_NAME"
       - run: npm run docs
