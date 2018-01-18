@@ -5,11 +5,7 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
@@ -19,7 +15,8 @@
     "build": "rm -rf lib && tsc",
     "test": "jest",
     "prepublish": "npm run build",
-    "docs": "typedoc --out docs/ ./src && gh-pages -d docs"
+    "docs":
+      "rm -rf docs && typedoc --out docs/ ./src &&  touch docs/.nojekyll && gh-pages -d docs"
   },
   "repository": {
     "type": "git",
