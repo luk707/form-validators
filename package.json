@@ -1,11 +1,15 @@
 {
   "name": "form-validators",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A collection of javascript form validators Edit",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "jest": {
-    "moduleFileExtensions": ["ts", "tsx", "js"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
     "transform": {
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
@@ -15,8 +19,7 @@
     "build": "rm -rf lib && tsc",
     "test": "jest",
     "prepublish": "npm run build",
-    "docs":
-      "rm -rf docs && typedoc --out docs/ ./src &&  touch docs/.nojekyll && gh-pages -d docs"
+    "docs": "rm -rf docs && typedoc --out docs/ ./src &&  touch docs/.nojekyll && gh-pages -d docs"
   },
   "repository": {
     "type": "git",
