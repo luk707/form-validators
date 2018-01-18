@@ -3,10 +3,9 @@ workflows:
   commit:
     jobs:
       - test:
-        filters:
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only: master
   deploy:
     jobs:
       - deploy:
