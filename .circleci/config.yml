@@ -35,7 +35,11 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       # Run tests!
-      - run: npm test -- --ci --testResultsProcessor="jest-junit"
+      - run:
+          name: Jest Suite
+          command: npm test -- --ci --testResultsProcessor="jest-junit"
+          environment:
+            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
   deploy:
     docker:
       - image: circleci/node:7.10
