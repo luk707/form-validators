@@ -35,7 +35,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       # Run tests!
-      - run: npm test
+      - run: npm test -- --ci --testResultsProcessor="jest-junit"
   deploy:
     docker:
       - image: circleci/node:7.10
