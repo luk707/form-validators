@@ -38,6 +38,7 @@ jobs:
       - store_test_results:
           path: reports/junit/js-test-results.xml
       - persist_to_workspace:
+          root: ~/repo
           paths:
             - .
   deploy:
