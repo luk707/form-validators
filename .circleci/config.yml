@@ -4,7 +4,6 @@ workflows:
     jobs:
       - test
       - deploy:
-          requires: test
           # Only run a deploy if a new version tag has been pushed
           filters:
             tags:
