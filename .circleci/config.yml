@@ -8,8 +8,6 @@ workflows:
               only: master
             tags:
               ignore: /v[0-9]+(\.[0-9]+)*/
-  deploy:
-    jobs:
       - deploy:
           # Only run a deploy if a new version tag has been pushed
           filters:
@@ -63,6 +61,9 @@ jobs:
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_KEY" >> ~/.npmrc
       - run: npm publish
       # Since we have published a new version of the package, bump the docs too
+      - add_ssh_keys:
+          fingerprints:
+            - "91:f8:c7:a3:ee:0c:14:bb:48:46:f4:62:07:e7:7b:b5"
       - run: git config --global user.email "$GH_EMAIL"
       - run: git config --global user.name "$GH_NAME"
       - run: npm run docs
