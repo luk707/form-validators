@@ -63,7 +63,7 @@ jobs:
       # Since we have published a new version of the package, bump the docs too
       - add_ssh_keys:
           fingerprints:
-            - "91:f8:c7:a3:ee:0c:14:bb:48:46:f4:62:07:e7:7b:b5"
+            - "6b:f2:45:ac:be:96:f5:3d:76:d3:98:d0:7f:2c:8c:64"
       - run: git config --global user.email "$GH_EMAIL"
       - run: git config --global user.name "$GH_NAME"
       - run: npm run docs
