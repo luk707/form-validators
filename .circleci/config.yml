@@ -57,12 +57,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       # Reads the npm publish key from the environment and confirgures the .npmrc file
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_KEY" >> ~/.npmrc
-      - run: npm publish
-      # Since we have published a new version of the package, bump the docs too
       - add_ssh_keys:
           fingerprints:
             - "6b:f2:45:ac:be:96:f5:3d:76:d3:98:d0:7f:2c:8c:64"
       - run: git config --global user.email "$GH_EMAIL"
       - run: git config --global user.name "$GH_NAME"
-      - run: npm run docs
-      - run: npm run publish
+      - run: npm publish
