@@ -3,7 +3,7 @@ import {
   ErrorMessage,
   ErrorMessageGenerator
 } from "./error-message";
-import { Validator, Validation, Value, Values } from "./validation";
+import { Validator, Validation, Value } from "./validation";
 
 export interface EmailErrorMessageOptions {
   email: Value;
