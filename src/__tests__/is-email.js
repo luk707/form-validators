@@ -1,4 +1,4 @@
-import isEmail from "~/is-email";
+import isEmail, { defaultIsEmailErrorMessageGenerator } from "~/is-email";
 import isValid from "~/util/is-valid";
 import isInvalid from "~/util/is-invalid";
 
@@ -59,5 +59,18 @@ describe("isEmail", () => {
   });
   it("rejects whitespace around email address", () => {
     expect(isInvalid(isEmail()(" email@domain.com "))).toBe(true);
+  });
+});
+
+describe("defaultIsEmailErrorMessageGenerator", () => {
+  it("returns a string containing the value", () => {
+    expect(
+      /TEST/.test(defaultIsEmailErrorMessageGenerator({ value: "TEST" }))
+    ).toBe(true);
+    expect(
+      /HELLOWORLD/.test(
+        defaultIsEmailErrorMessageGenerator({ value: "HELLOWORLD" })
+      )
+    ).toBe(true);
   });
 });
