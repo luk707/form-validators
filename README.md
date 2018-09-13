@@ -21,8 +21,8 @@ customEmailValidator("not an email address"); // You dun goofed!
 
 // Optionaly pass a function that recieves the email adress to build a custom error message
 const dynamicCustomEmailValidator = isEmail(
-  ({ email }) => `Hmm... I don't think '${email}' is valid.`
+  ({ value }) => `Hmm... I don't think '${value}' is a valid email address.`
 );
 dynamicCustomEmailValidator("email@domain.com"); // undefined
-dynamicCustomEmailValidator("not an email address"); // Hmm... I don't think 'not an email address' is valid.
+dynamicCustomEmailValidator("not an email address"); // Hmm... I don't think 'not an email address' is a valid email address.
 ```
