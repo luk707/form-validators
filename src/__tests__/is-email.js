@@ -1,5 +1,6 @@
-import { isEmail } from "../is-email";
-import { isInvalid, isValid } from "../test-helpers";
+import isEmail from "~/is-email";
+import isValid from "~/util/is-valid";
+import isInvalid from "~/util/is-invalid";
 
 describe("isEmail", () => {
   it("accepts a valid email address", () => {
