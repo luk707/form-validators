@@ -4,7 +4,7 @@
   "description": "A collection of javascript form validators Edit",
   "main": "./lib/index.js",
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "build": "babel --out-dir lib --ignore **/__tests__ src",
     "test": "jest"
   },
   "repository": {
