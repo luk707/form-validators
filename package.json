@@ -1,6 +1,6 @@
 {
   "name": "form-validators",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "A collection of javascript form validators Edit",
   "main": "./lib/index.js",
   "scripts": {
