@@ -11,6 +11,10 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /.mdx?$/,
+        use: ["babel-loader", "@mdx-js/loader"]
       }
     ]
   },
