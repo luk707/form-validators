@@ -2,10 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~": ["src/index.js"],
-      "~/*": ["src/*"],
-      "%": ["docs/index.js"],
-      "%/*": ["docs/*"]
+      "~/*": ["./*"],
+      "form-validators": ["src/index.js"],
+      "form-validators/lib/*": ["src/*"]
     }
   }
 }

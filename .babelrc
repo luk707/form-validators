@@ -8,10 +8,9 @@
       {
         "root": ["./"],
         "alias": {
-          "^~$": "./src/index.js",
-          "^~/(.+)": "./src/\\1",
-          "^%$": "./docs/index.js",
-          "^%/(.+)": "./docs/\\1"
+          "^~/(.+)": "./\\1",
+          "^form-validators$": "./src/index.js",
+          "^form-validators/lib/(.+)$": "./src/\\1"
         }
       }
     ]

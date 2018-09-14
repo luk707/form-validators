@@ -1,4 +1,4 @@
-import getErrorMessage from "~/util/get-error-message";
+import getErrorMessage from "form-validators/lib/util/get-error-message";
 
 export const defaultIsEmailErrorMessageGenerator = ({ value }) =>
   `'${value}' is not a valid email address.`;
