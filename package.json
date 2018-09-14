@@ -27,6 +27,8 @@
     "babel-preset-react": "^6.24.1",
     "documentation": "^8.1.2",
     "jest": "^23.6.0",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
     "webpack": "^4.19.0",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.8"
