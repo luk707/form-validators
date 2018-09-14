@@ -5,6 +5,7 @@
   "main": "./lib/index.js",
   "scripts": {
     "build": "babel --out-dir lib --ignore **/__tests__ src",
+    "docs": "documentation serve --watch src/**",
     "test": "jest"
   },
   "repository": {
@@ -21,6 +22,7 @@
     "babel-cli": "^6.26.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.7.0",
+    "documentation": "^8.1.2",
     "jest": "^23.6.0"
   }
 }
