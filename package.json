@@ -4,8 +4,10 @@
   "description": "A collection of javascript form validators Edit",
   "main": "./lib/index.js",
   "scripts": {
+    "dev": "npm run build -- --watch",
     "build": "babel --out-dir lib --ignore **/__tests__ src",
-    "docs": "documentation serve --watch src/**",
+    "docs:watch": "documentation serve --watch src/**",
+    "docs:build": "documentation build -o docs -f html src/**",
     "test": "jest"
   },
   "repository": {
