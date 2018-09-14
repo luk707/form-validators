@@ -1,6 +1,6 @@
 # Generated artifacts
 lib
-docs
+.docs
 
 # Logs
 logs
