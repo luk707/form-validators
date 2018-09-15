@@ -4,7 +4,23 @@
 
 A collection of javascript form validators
 
-## isEmail
+## Getting started
+
+Install `form-validators` from your chosen package manager into your project:
+
+npm:
+
+```
+$ npm install --save form-validators
+```
+
+yarn:
+
+```
+$ yarn add form-validators
+```
+
+Import any of the validators into your application:
 
 ```js
 import { isEmail } from "form-validators";
@@ -26,3 +42,5 @@ const dynamicCustomEmailValidator = isEmail(
 dynamicCustomEmailValidator("email@domain.com"); // undefined
 dynamicCustomEmailValidator("not an email address"); // Hmm... I don't think 'not an email address' is a valid email address.
 ```
+
+_For a full list of validators see [the full list of validators](#/validators)_
