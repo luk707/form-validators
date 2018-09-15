@@ -42,7 +42,7 @@ class ContributionBar extends Component {
           this.setState({
             fetching: false,
             authors: Object.keys(authors).map(author => authors[author]),
-            lastModified: new Date(data[0].commit.author.date.substring(0, 10)),
+            lastModified: new Date(data[0].commit.author.date),
             commit: data[0]
           });
           return;
