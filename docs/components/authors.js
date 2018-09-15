@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { arrayOf, shape, string, number } from "prop-types";
 
 const size = "36px";
-const overlap = "10px";
+const overlap = "5px";
 
 class Authors extends Component {
   static propTypes = {
@@ -36,7 +36,7 @@ class Authors extends Component {
                 marginRight: `-${overlap}`,
                 backgroundSize: `100% 100%`,
                 borderRadius: "50%",
-                boxShadow: `0 0 0 '3px #fff`,
+                boxShadow: `0 0 0 3px #fff`,
                 backgroundImage: `url("${author.image}")`
               }}
             />
