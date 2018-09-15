@@ -33,6 +33,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "bulma": "^0.7.1",
+    "classnames": "^2.2.6",
     "css-loader": "^1.0.0",
     "gh-pages": "^1.2.0",
     "jest": "^23.6.0",

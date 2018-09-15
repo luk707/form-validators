@@ -31,9 +31,12 @@ class MenuComponent extends Component {
                 Getting started
               </NavLink>
             </li>
+          </MenuList>
+          <MenuLabel>Validators</MenuLabel>
+          <MenuList>
             <li>
-              <NavLink exact to="/examples" activeClassName="is-active">
-                Examples
+              <NavLink exact to="/is-email" activeClassName="is-active">
+                isEmail
               </NavLink>
             </li>
           </MenuList>

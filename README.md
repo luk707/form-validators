@@ -42,5 +42,3 @@ const dynamicCustomEmailValidator = isEmail(
 dynamicCustomEmailValidator("email@domain.com"); // undefined
 dynamicCustomEmailValidator("not an email address"); // Hmm... I don't think 'not an email address' is a valid email address.
 ```
-
-_For a full list of validators see [the full list of validators](#/validators)_

@@ -1,0 +1,20 @@
+import ValidatorDemo from '~/docs/components/validator-demo'
+import isEmail from 'form-validators/lib/is-email'
+
+# isEmail
+
+## Purpose
+
+The is email validator is a loose validator that checks for the following things:
+
+- Does the email have an at in it
+- Does it have at least one period in the text after the at symbol and at least one character before and after the period
+- Does it have at least a single character before the at symbol
+
+It's purpose is to act as a catch all clause for text that clearly is not an email before you send it to a server to do more extensive validation i.e. an MX record look up.
+
+## Example
+
+Try out some email addresses of your own in this interactive example:
+
+<ValidatorDemo validator={isEmail()} label="Email" leftIcons={["fal fa-envelope"]} />
